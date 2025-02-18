@@ -1,4 +1,4 @@
-name: "[CI] TranslationAddons"
+name: "[CI] AI"
 on:
   push:
     branches:

@@ -10,7 +10,7 @@ describe "User creates debate", type: :system do
       title:,
       description:,
       user_group_id: nil,
-      taxonomizations:,
+      # taxonomizations:,
       add_documents: attachments,
       documents: [],
       current_user: author,

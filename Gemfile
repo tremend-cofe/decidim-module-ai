@@ -7,6 +7,7 @@ ruby RUBY_VERSION
 gem "concurrent-ruby", "= 1.3.4"
 
 gem "decidim", "~> 0.29"
+gem "decidim-initiatives", "~> 0.29"
 gem "decidim-ai", path: "."
 
 gem "bootsnap", "~> 1.4"
