@@ -3,7 +3,7 @@ PATH
   specs:
     decidim-ai (0.29.2)
       classifier-reborn (~> 2.3.0)
-      decidim-core (= 0.29.2)
+      decidim-core (~> 0.29.0)
 
 GEM
   remote: https://rubygems.org/
