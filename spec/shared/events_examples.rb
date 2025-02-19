@@ -52,7 +52,7 @@ shared_examples "initiatives spam analysis" do
       let(:compared_against) { description }
       let(:resource) { Decidim::Initiative }
       let(:component) { nil }
-      let(:participatory_space) { initiative }
+      let!(:participatory_space) { initiative }
     end
   end
 
@@ -73,6 +73,8 @@ end
 
 shared_examples "debates spam analysis" do
   let(:manifest_name) { "debates" }
+  let(:scope) { create(:scope, organization:) }
+  let(:category) { create(:category, participatory_space:) }
 
   context "when spam content is added" do
     let(:description) { "Claim your prize today so you can win." }
@@ -129,6 +131,8 @@ end
 
 shared_examples "meetings spam analysis" do
   let(:manifest_name) { "meetings" }
+  let(:scope) { create(:scope, organization:) }
+  let(:category) { create(:category, participatory_space:) }
 
   context "when spam content is added" do
     let(:description) { "Claim your prize today so you can win." }

@@ -19,6 +19,14 @@ module Decidim
         end
       end
 
+      initializer "decidim_ai.patch_resources" do
+        Rails.application.config.to_prepare do
+          Decidim::UpdateAccount.prepend Decidim::Ai::Overrides::UpdateAccount
+          Decidim::UpdateUserGroup.prepend Decidim::Ai::Overrides::UpdateUserGroup
+          Decidim::CreateUserGroup.prepend Decidim::Ai::Overrides::CreateUserGroup
+        end
+      end
+
       initializer "decidim_ai.events.subscribe_profile" do
         config.to_prepare do
           Decidim::EventsManager.subscribe("decidim.update_account:after") do |_event_name, data|
